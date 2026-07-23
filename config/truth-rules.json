@@ -1,0 +1,67 @@
+{
+  "truth_filters": {
+    "fake_news_keywords": [
+      "假新聞",
+      "造假",
+      "虛構",
+      "捏造",
+      "深偽",
+      "AI 生成"
+    ],
+    "clickbait_patterns": [
+      "你不會相信",
+      "震驚",
+      "絕密",
+      "獨家爆料",
+      "必看"
+    ],
+    "source_credibility": {
+      "trusted": ["BBC", "Reuters", "AP News", "Nature", "Science"],
+      "suspicious": ["未知來源", "匿名", "據說"]
+    }
+  },
+  "goodness_filters": {
+    "hate_speech_keywords": [
+      "仇恨",
+      "歧視",
+      "攻擊",
+      "辱罵",
+      "仇視"
+    ],
+    "violent_content": [
+      "暴力",
+      "殺害",
+      "恐怖",
+      "炸彈",
+      "槍擊"
+    ],
+    "incitement_patterns": [
+      "號召攻擊",
+      "煽動",
+      "起義",
+      "暴動"
+    ]
+  },
+  "patience_filters": {
+    "extreme_keywords": [
+      "絕對",
+      "必然",
+      "永遠",
+      "不可能",
+      "完全"
+    ],
+    "conspiracy_keywords": [
+      "陰謀",
+      "黑手",
+      "秘密",
+      "隱瞞",
+      "真相"
+    ],
+    "irrational_patterns": [
+      "沒有證據但",
+      "據傳",
+      "聽說",
+      "可能是"
+    ]
+  }
+}

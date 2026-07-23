@@ -1,0 +1,50 @@
+{
+  "news_sources": [
+    {
+      "name": "BBC News",
+      "url": "https://www.bbc.com/news",
+      "category": "news",
+      "enabled": true
+    },
+    {
+      "name": "Reuters",
+      "url": "https://www.reuters.com",
+      "category": "news",
+      "enabled": true
+    },
+    {
+      "name": "AP News",
+      "url": "https://apnews.com",
+      "category": "news",
+      "enabled": true
+    }
+  ],
+  "tech_sources": [
+    {
+      "name": "TechCrunch",
+      "url": "https://techcrunch.com",
+      "category": "tech",
+      "enabled": true
+    },
+    {
+      "name": "Hacker News",
+      "url": "https://news.ycombinator.com",
+      "category": "tech",
+      "enabled": true
+    },
+    {
+      "name": "GitHub Trending",
+      "url": "https://github.com/trending",
+      "category": "tech",
+      "enabled": true
+    }
+  ],
+  "academic_sources": [
+    {
+      "name": "ArXiv",
+      "url": "https://arxiv.org",
+      "category": "academic",
+      "enabled": true
+    }
+  ]
+}
