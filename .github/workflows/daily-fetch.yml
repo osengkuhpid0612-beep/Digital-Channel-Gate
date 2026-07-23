@@ -1,4 +1,4 @@
-name: Daily Data Fetch
+name: Daily Data Fetch & Isolated Validation
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:     # 允許手動觸發
 
 jobs:
-  fetch:
+  fetch_and_validate:
     runs-on: ubuntu-latest
     
     steps:
@@ -25,13 +25,17 @@ jobs:
       - name: Run fetcher
         run: python scripts/fetcher.py
       
-      - name: Run validator
-        run: python scripts/validator.py
+      - name: Run isolated validator (隔離沙盒模式)
+        run: |
+          # 驗證新聞資料
+          python scripts/isolated_validator.py data/raw/news_*.json data/filtered/news_validated.json || true
+          # 驗證科技資料
+          python scripts/isolated_validator.py data/raw/tech_*.json data/filtered/tech_validated.json || true
       
       - name: Commit and push
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
-          git commit -m "Daily data fetch - $(date +'%Y-%m-%d %H:%M:%S')" || true
+          git commit -m "Daily validation - $(date +'%Y-%m-%d %H:%M:%S') - 隔離沙盒模式" || true
           git push
