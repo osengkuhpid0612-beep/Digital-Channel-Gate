@@ -1,37 +1,42 @@
 name: Daily Data Fetch & Isolated Validation
-
 on:
   schedule:
     - cron: '0 0 * * *'  # 每天午夜執行
   workflow_dispatch:     # 允許手動觸發
-
+  repository_dispatch:   # 🚀 新增：允許外部API觸發（來自王都會議系統）
+    types: [king_decree_trigger]  # 定義觸發類型
 jobs:
   fetch_and_validate:
     runs-on: ubuntu-latest
-    
     steps:
       - uses: actions/checkout@v3
-      
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
-      
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install requests beautifulsoup4
       
+      # 🌟 新增：記錄觸發信息
+      - name: Log trigger information
+        run: |
+          echo "🚀 工作流觸發事件：${{ github.event_name }}"
+          if [ "${{ github.event_name }}" = "repository_dispatch" ]; then
+            echo "📡 觸發類型：${{ github.event.action }}"
+            echo "👑 會議ID：${{ github.event.client_payload.session_id }}"
+            echo "📋 議題關鍵字：${{ github.event.client_payload.keywords }}"
+          fi
+      
       - name: Run fetcher
         run: python scripts/fetcher.py
-      
       - name: Run isolated validator (隔離沙盒模式)
         run: |
           # 驗證新聞資料
           python scripts/isolated_validator.py data/raw/news_*.json data/filtered/news_validated.json || true
           # 驗證科技資料
           python scripts/isolated_validator.py data/raw/tech_*.json data/filtered/tech_validated.json || true
-      
       - name: Commit and push
         run: |
           git config --local user.email "action@github.com"
