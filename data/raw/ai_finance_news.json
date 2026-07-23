@@ -1,0 +1,63 @@
+{
+  "fetch_timestamp": "2026-07-23T07:15:19.757619",
+  "source": "AI Finance News Fetcher",
+  "total_items": 8,
+  "items": [
+    {
+      "title": "OpenAI 獲得新一輪融資，估值突破 1000 億美元",
+      "content": "OpenAI 宣布完成新一輪融資，投資者包括微軟和其他主要科技公司。此輪融資將用於加速 AI 模型開發。",
+      "source": "TechCrunch",
+      "timestamp": "2026-07-23T07:15:19.757565",
+      "category": "AI Finance"
+    },
+    {
+      "title": "Google 推出新 AI 芯片，性能提升 50%",
+      "content": "Google 發布最新的 TPU 芯片，專為 AI 訓練優化。該芯片將用於 Google Cloud 服務。",
+      "source": "Reuters",
+      "timestamp": "2026-07-23T07:15:19.757574",
+      "category": "AI Technology"
+    },
+    {
+      "title": "Meta AI 研究團隊發布新開源模型",
+      "content": "Meta 開源其最新的大型語言模型，供研究人員和開發者使用。",
+      "source": "TechCrunch",
+      "timestamp": "2026-07-23T07:15:19.757576",
+      "category": "AI Research"
+    },
+    {
+      "title": "AI 芯片製造商股價上漲 30%",
+      "content": "受 AI 需求推動，主要芯片製造商的股價在過去一個月上漲了 30%。",
+      "source": "Bloomberg",
+      "timestamp": "2026-07-23T07:15:19.757578",
+      "category": "Stock Market"
+    },
+    {
+      "title": "中國 AI 初創公司融資創新高",
+      "content": "中國 AI 初創公司在 2024 年上半年融資總額達到 50 億美元，創歷史新高。",
+      "source": "Reuters",
+      "timestamp": "2026-07-23T07:15:19.757579",
+      "category": "AI Finance"
+    },
+    {
+      "title": "AI 監管政策在全球推進",
+      "content": "歐盟、美國和其他國家正在推進 AI 監管政策，以確保 AI 的安全和倫理使用。",
+      "source": "TechCrunch",
+      "timestamp": "2026-07-23T07:15:19.757581",
+      "category": "Policy"
+    },
+    {
+      "title": "AI 應用在醫療領域取得突破",
+      "content": "新的 AI 診斷工具在臨床試驗中顯示出 95% 的準確率，有望改變醫療行業。",
+      "source": "Reuters",
+      "timestamp": "2026-07-23T07:15:19.757583",
+      "category": "Healthcare"
+    },
+    {
+      "title": "AI 人才爭奪戰升溫",
+      "content": "科技公司為了吸引 AI 人才，紛紛提高薪資和福利。",
+      "source": "Bloomberg",
+      "timestamp": "2026-07-23T07:15:19.757585",
+      "category": "HR"
+    }
+  ]
+}

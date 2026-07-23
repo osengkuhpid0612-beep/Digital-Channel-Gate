@@ -1,0 +1,135 @@
+{
+  "validation_timestamp": "2026-07-23T07:15:24.950130",
+  "session_id": "isolated_2026-07-23T07:15:24.950034",
+  "is_isolated": true,
+  "validated_items": [
+    {
+      "source": "TechCrunch",
+      "content_preview": "OpenAI 宣布完成新一輪融資，投資者包括微軟和其他主要科技公司。此輪融資將用於加速 AI 模型開發。",
+      "validation": {
+        "overall_score": 100.0,
+        "truth_score": 100,
+        "goodness_score": 100,
+        "patience_score": 100,
+        "passed": true,
+        "issues": [],
+        "source": "TechCrunch",
+        "timestamp": "2026-07-23T07:15:24.950159",
+        "session_id": "isolated_2026-07-23T07:15:24.950034",
+        "is_isolated": true
+      }
+    },
+    {
+      "source": "Reuters",
+      "content_preview": "Google 發布最新的 TPU 芯片，專為 AI 訓練優化。該芯片將用於 Google Cloud 服務。",
+      "validation": {
+        "overall_score": 100.0,
+        "truth_score": 100,
+        "goodness_score": 100,
+        "patience_score": 100,
+        "passed": true,
+        "issues": [],
+        "source": "Reuters",
+        "timestamp": "2026-07-23T07:15:24.950176",
+        "session_id": "isolated_2026-07-23T07:15:24.950034",
+        "is_isolated": true
+      }
+    },
+    {
+      "source": "TechCrunch",
+      "content_preview": "Meta 開源其最新的大型語言模型，供研究人員和開發者使用。",
+      "validation": {
+        "overall_score": 100.0,
+        "truth_score": 100,
+        "goodness_score": 100,
+        "patience_score": 100,
+        "passed": true,
+        "issues": [],
+        "source": "TechCrunch",
+        "timestamp": "2026-07-23T07:15:24.950187",
+        "session_id": "isolated_2026-07-23T07:15:24.950034",
+        "is_isolated": true
+      }
+    },
+    {
+      "source": "Bloomberg",
+      "content_preview": "受 AI 需求推動，主要芯片製造商的股價在過去一個月上漲了 30%。",
+      "validation": {
+        "overall_score": 100.0,
+        "truth_score": 100,
+        "goodness_score": 100,
+        "patience_score": 100,
+        "passed": true,
+        "issues": [],
+        "source": "Bloomberg",
+        "timestamp": "2026-07-23T07:15:24.950197",
+        "session_id": "isolated_2026-07-23T07:15:24.950034",
+        "is_isolated": true
+      }
+    },
+    {
+      "source": "Reuters",
+      "content_preview": "中國 AI 初創公司在 2024 年上半年融資總額達到 50 億美元，創歷史新高。",
+      "validation": {
+        "overall_score": 100.0,
+        "truth_score": 100,
+        "goodness_score": 100,
+        "patience_score": 100,
+        "passed": true,
+        "issues": [],
+        "source": "Reuters",
+        "timestamp": "2026-07-23T07:15:24.950216",
+        "session_id": "isolated_2026-07-23T07:15:24.950034",
+        "is_isolated": true
+      }
+    },
+    {
+      "source": "TechCrunch",
+      "content_preview": "歐盟、美國和其他國家正在推進 AI 監管政策，以確保 AI 的安全和倫理使用。",
+      "validation": {
+        "overall_score": 100.0,
+        "truth_score": 100,
+        "goodness_score": 100,
+        "patience_score": 100,
+        "passed": true,
+        "issues": [],
+        "source": "TechCrunch",
+        "timestamp": "2026-07-23T07:15:24.950230",
+        "session_id": "isolated_2026-07-23T07:15:24.950034",
+        "is_isolated": true
+      }
+    },
+    {
+      "source": "Reuters",
+      "content_preview": "新的 AI 診斷工具在臨床試驗中顯示出 95% 的準確率，有望改變醫療行業。",
+      "validation": {
+        "overall_score": 100.0,
+        "truth_score": 100,
+        "goodness_score": 100,
+        "patience_score": 100,
+        "passed": true,
+        "issues": [],
+        "source": "Reuters",
+        "timestamp": "2026-07-23T07:15:24.950240",
+        "session_id": "isolated_2026-07-23T07:15:24.950034",
+        "is_isolated": true
+      }
+    },
+    {
+      "source": "Bloomberg",
+      "content_preview": "科技公司為了吸引 AI 人才，紛紛提高薪資和福利。",
+      "validation": {
+        "overall_score": 100.0,
+        "truth_score": 100,
+        "goodness_score": 100,
+        "patience_score": 100,
+        "passed": true,
+        "issues": [],
+        "source": "Bloomberg",
+        "timestamp": "2026-07-23T07:15:24.950248",
+        "session_id": "isolated_2026-07-23T07:15:24.950034",
+        "is_isolated": true
+      }
+    }
+  ]
+}
