@@ -1,0 +1,55 @@
+{
+  "validation_timestamp": "2026-07-24T05:44:52.124493",
+  "session_id": "isolated_2026-07-24T05:44:52.124451",
+  "is_isolated": true,
+  "validated_items": [
+    {
+      "source": "BBC News",
+      "content_preview": "",
+      "validation": {
+        "overall_score": 100.0,
+        "truth_score": 100,
+        "goodness_score": 100,
+        "patience_score": 100,
+        "passed": true,
+        "issues": [],
+        "source": "BBC News",
+        "timestamp": "2026-07-24T05:44:52.124514",
+        "session_id": "isolated_2026-07-24T05:44:52.124451",
+        "is_isolated": true
+      }
+    },
+    {
+      "source": "Reuters",
+      "content_preview": "",
+      "validation": {
+        "overall_score": 100.0,
+        "truth_score": 100,
+        "goodness_score": 100,
+        "patience_score": 100,
+        "passed": true,
+        "issues": [],
+        "source": "Reuters",
+        "timestamp": "2026-07-24T05:44:52.124524",
+        "session_id": "isolated_2026-07-24T05:44:52.124451",
+        "is_isolated": true
+      }
+    },
+    {
+      "source": "AP News",
+      "content_preview": "",
+      "validation": {
+        "overall_score": 100.0,
+        "truth_score": 100,
+        "goodness_score": 100,
+        "patience_score": 100,
+        "passed": true,
+        "issues": [],
+        "source": "AP News",
+        "timestamp": "2026-07-24T05:44:52.124531",
+        "session_id": "isolated_2026-07-24T05:44:52.124451",
+        "is_isolated": true
+      }
+    }
+  ]
+}
