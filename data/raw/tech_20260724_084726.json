@@ -1,0 +1,23 @@
+[
+  {
+    "source": "TechCrunch",
+    "url": "https://techcrunch.com",
+    "category": "tech",
+    "timestamp": "2026-07-24T08:47:23.580879",
+    "status": "fetched"
+  },
+  {
+    "source": "Hacker News",
+    "url": "https://news.ycombinator.com",
+    "category": "tech",
+    "timestamp": "2026-07-24T08:47:23.580879",
+    "status": "fetched"
+  },
+  {
+    "source": "GitHub Trending",
+    "url": "https://github.com/trending",
+    "category": "tech",
+    "timestamp": "2026-07-24T08:47:23.580879",
+    "status": "fetched"
+  }
+]
