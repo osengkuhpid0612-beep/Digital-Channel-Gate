@@ -8,7 +8,6 @@ on:
     types: [king_decree_trigger]
 
 # 🔑 【關鍵修復】明確宣告 contents: write 權限
-# 這是解決 "Commit and push 失敗" 的核心修正
 # GitHub Actions 自 2022 年起預設 GITHUB_TOKEN 為唯讀
 # 必須明確宣告才能讓 git push 成功
 permissions:
@@ -26,13 +25,12 @@ jobs:
       # 基礎環境建置
       # ─────────────────────────────────────────
       - name: Checkout repository
-        uses: actions/checkout@v4  # 升級至 v4（v3 已接近 EOL）
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v5  # 升級至 v5
+        uses: actions/setup-python@v4
         with:
           python-version: '3.11'
-          cache: 'pip'  # 🚀 啟用 pip 快取，加速後續執行
 
       - name: Install dependencies
         run: |
@@ -67,9 +65,7 @@ jobs:
       - name: Run isolated validator (真善忍沙盒驗證)
         run: |
           echo "🦎 小蜥蜴進入隔離沙盒模式..."
-          # 驗證新聞資料（|| true 確保即使無新資料也不中斷流程）
           python scripts/isolated_validator.py data/raw/news_*.json data/filtered/news_validated.json || true
-          # 驗證科技資料
           python scripts/isolated_validator.py data/raw/tech_*.json data/filtered/tech_validated.json || true
           echo "✅ 真善忍驗證完成"
 
