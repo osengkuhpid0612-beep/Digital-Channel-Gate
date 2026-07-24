@@ -1,6 +1,6 @@
 {
-  "validation_timestamp": "2026-07-24T15:22:27.025850",
-  "session_id": "isolated_2026-07-24T15:22:27.025807",
+  "validation_timestamp": "2026-07-24T15:32:40.461979",
+  "session_id": "isolated_2026-07-24T15:32:40.461936",
   "is_isolated": true,
   "validated_items": [
     {
@@ -14,8 +14,8 @@
         "passed": true,
         "issues": [],
         "source": "BBC News",
-        "timestamp": "2026-07-24T15:22:27.025894",
-        "session_id": "isolated_2026-07-24T15:22:27.025807",
+        "timestamp": "2026-07-24T15:32:40.461997",
+        "session_id": "isolated_2026-07-24T15:32:40.461936",
         "is_isolated": true
       }
     },
@@ -30,8 +30,8 @@
         "passed": true,
         "issues": [],
         "source": "Reuters",
-        "timestamp": "2026-07-24T15:22:27.025905",
-        "session_id": "isolated_2026-07-24T15:22:27.025807",
+        "timestamp": "2026-07-24T15:32:40.462005",
+        "session_id": "isolated_2026-07-24T15:32:40.461936",
         "is_isolated": true
       }
     },
@@ -46,8 +46,8 @@
         "passed": true,
         "issues": [],
         "source": "AP News",
-        "timestamp": "2026-07-24T15:22:27.025913",
-        "session_id": "isolated_2026-07-24T15:22:27.025807",
+        "timestamp": "2026-07-24T15:32:40.462009",
+        "session_id": "isolated_2026-07-24T15:32:40.461936",
         "is_isolated": true
       }
     }
