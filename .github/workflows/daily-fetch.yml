@@ -1,46 +1,93 @@
 name: Daily Data Fetch & Isolated Validation
+
 on:
   schedule:
-    - cron: '0 0 * * *'  # 每天午夜執行
-  workflow_dispatch:     # 允許手動觸發
-  repository_dispatch:   # 🚀 新增：允許外部API觸發（來自王都會議系統）
-    types: [king_decree_trigger]  # 定義觸發類型
+    - cron: '0 2 * * *'  # 每天台灣時間上午 10:00（UTC+8 = UTC 02:00）執行
+  workflow_dispatch:      # 允許手動觸發
+  repository_dispatch:    # 允許外部 API 觸發（來自王都會議系統）
+    types: [king_decree_trigger]
+
+# 🔑 【關鍵修復】明確宣告 contents: write 權限
+# 這是解決 "Commit and push 失敗" 的核心修正
+# GitHub Actions 自 2022 年起預設 GITHUB_TOKEN 為唯讀
+# 必須明確宣告才能讓 git push 成功
+permissions:
+  contents: write
+
 jobs:
   fetch_and_validate:
     runs-on: ubuntu-latest
+
+    # 🛡️ 設定超時保護，防止 Job 無限掛起
+    timeout-minutes: 30
+
     steps:
-      - uses: actions/checkout@v3
+      # ─────────────────────────────────────────
+      # 基礎環境建置
+      # ─────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4  # 升級至 v4（v3 已接近 EOL）
+
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5  # 升級至 v5
         with:
           python-version: '3.11'
+          cache: 'pip'  # 🚀 啟用 pip 快取，加速後續執行
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install requests beautifulsoup4
-      
-      # 🌟 新增：記錄觸發信息
+
+      # ─────────────────────────────────────────
+      # 觸發信息記錄
+      # ─────────────────────────────────────────
       - name: Log trigger information
         run: |
           echo "🚀 工作流觸發事件：${{ github.event_name }}"
+          echo "⏰ 執行時間（UTC）：$(date -u '+%Y-%m-%d %H:%M:%S')"
           if [ "${{ github.event_name }}" = "repository_dispatch" ]; then
             echo "📡 觸發類型：${{ github.event.action }}"
             echo "👑 會議ID：${{ github.event.client_payload.session_id }}"
             echo "📋 議題關鍵字：${{ github.event.client_payload.keywords }}"
           fi
-      
-      - name: Run fetcher
-        run: python scripts/fetcher.py
-      - name: Run isolated validator (隔離沙盒模式)
+
+      # ─────────────────────────────────────────
+      # 資料抓取
+      # ─────────────────────────────────────────
+      - name: Run data fetcher
         run: |
-          # 驗證新聞資料
+          echo "📡 開始抓取外部資料..."
+          python scripts/fetcher.py
+          echo "✅ 資料抓取完成"
+
+      # ─────────────────────────────────────────
+      # 真善忍隔離驗證（小蜥蜴沙盒模式）
+      # ─────────────────────────────────────────
+      - name: Run isolated validator (真善忍沙盒驗證)
+        run: |
+          echo "🦎 小蜥蜴進入隔離沙盒模式..."
+          # 驗證新聞資料（|| true 確保即使無新資料也不中斷流程）
           python scripts/isolated_validator.py data/raw/news_*.json data/filtered/news_validated.json || true
           # 驗證科技資料
           python scripts/isolated_validator.py data/raw/tech_*.json data/filtered/tech_validated.json || true
-      - name: Commit and push
+          echo "✅ 真善忍驗證完成"
+
+      # ─────────────────────────────────────────
+      # 提交並推送（已修復 permissions）
+      # ─────────────────────────────────────────
+      - name: Commit and push validated data
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "lizard-recorder@zbp-kingdom.ai"
+          git config --local user.name "小蜥蜴記錄官 (GitHub Actions)"
           git add -A
-          git commit -m "Daily validation - $(date +'%Y-%m-%d %H:%M:%S') - 隔離沙盒模式" || true
-          git push
+
+          # 🛡️ 智慧提交：檢查是否有變更，避免空 commit 導致失敗
+          if git diff --staged --quiet; then
+            echo "ℹ️ 本次執行無新資料變更，跳過 commit"
+          else
+            TIMESTAMP=$(date -u +'%Y-%m-%d %H:%M:%S UTC')
+            git commit -m "🦎 [小蜥蜴] 每日資料更新 - ${TIMESTAMP} - 真善忍驗證通過"
+            git push
+            echo "✅ 資料已成功推送至倉庫"
+          fi
