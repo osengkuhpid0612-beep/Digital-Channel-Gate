@@ -1,0 +1,55 @@
+{
+  "validation_timestamp": "2026-07-24T05:34:37.572309",
+  "session_id": "isolated_2026-07-24T05:34:37.572267",
+  "is_isolated": true,
+  "validated_items": [
+    {
+      "source": "TechCrunch",
+      "content_preview": "",
+      "validation": {
+        "overall_score": 100.0,
+        "truth_score": 100,
+        "goodness_score": 100,
+        "patience_score": 100,
+        "passed": true,
+        "issues": [],
+        "source": "TechCrunch",
+        "timestamp": "2026-07-24T05:34:37.572334",
+        "session_id": "isolated_2026-07-24T05:34:37.572267",
+        "is_isolated": true
+      }
+    },
+    {
+      "source": "Hacker News",
+      "content_preview": "",
+      "validation": {
+        "overall_score": 100.0,
+        "truth_score": 100,
+        "goodness_score": 100,
+        "patience_score": 100,
+        "passed": true,
+        "issues": [],
+        "source": "Hacker News",
+        "timestamp": "2026-07-24T05:34:37.572344",
+        "session_id": "isolated_2026-07-24T05:34:37.572267",
+        "is_isolated": true
+      }
+    },
+    {
+      "source": "GitHub Trending",
+      "content_preview": "",
+      "validation": {
+        "overall_score": 100.0,
+        "truth_score": 100,
+        "goodness_score": 100,
+        "patience_score": 100,
+        "passed": true,
+        "issues": [],
+        "source": "GitHub Trending",
+        "timestamp": "2026-07-24T05:34:37.572351",
+        "session_id": "isolated_2026-07-24T05:34:37.572267",
+        "is_isolated": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "source": "BBC News",
+    "url": "https://www.bbc.com/news",
+    "category": "news",
+    "timestamp": "2026-07-24T05:34:34.592428",
+    "status": "fetched"
+  },
+  {
+    "source": "Reuters",
+    "url": "https://www.reuters.com",
+    "category": "news",
+    "timestamp": "2026-07-24T05:34:34.592428",
+    "status": "fetched"
+  },
+  {
+    "source": "AP News",
+    "url": "https://apnews.com",
+    "category": "news",
+    "timestamp": "2026-07-24T05:34:34.592428",
+    "status": "fetched"
+  }
+]
